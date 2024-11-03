@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:shop_app/addproduct.dart';
 import '../../constants.dart';
 
 import '../../models/product.dart';
@@ -26,16 +27,26 @@ class HomeScreen extends StatelessWidget {
               "assets/icons/search.svg",
               colorFilter: const ColorFilter.mode(kTextColor, BlendMode.srcIn),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AddProductPage()),
+              );
+            },
           ),
           IconButton(
             icon: SvgPicture.asset(
               "assets/icons/cart.svg",
               colorFilter: const ColorFilter.mode(kTextColor, BlendMode.srcIn),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AddProductPage()),
+              );
+            },
           ),
-          const SizedBox(width: kDefaultPaddin / 2)
+          const SizedBox(width: kDefaultPaddin / 2),
         ],
       ),
       body: Column(
@@ -78,6 +89,16 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AddProductPage()),
+          );
+        },
+        backgroundColor: Colors.blue, // Ubah warna sesuai keinginan
+        child: const Icon(Icons.add, size: 30), // Menggunakan ikon '+' standar
       ),
     );
   }
